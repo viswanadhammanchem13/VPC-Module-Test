@@ -1,5 +1,6 @@
 module "vpc" {
-  source = "../Terraform-AWS-VPC"
+  # source = "../Terraform-AWS-VPC"
+  source = "git::https://github.com/viswanadhammanchem13/Terraform-AWS-VPC.git?ref=main"
   project = var.project
   environment = var.environment
   cidr_block = var.cidr_block
@@ -7,5 +8,5 @@ module "vpc" {
   database_subnet_cidrs = var.private_subnet_cidrs
   private_subnet_cidrs = var.database_subnet_cidrs
 
-  is_peering_required = true
+   is_peering_required = true
 }
